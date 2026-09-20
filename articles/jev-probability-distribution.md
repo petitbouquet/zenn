@@ -1,5 +1,5 @@
 ---
-title: "文章を書かないAI「Jev」で性格診断を作って、Cloudflare で動かしてみた"
+title: "文章を書かないAI「Jev」で性格診断を作る —— 16択の分類にちょうどよかった"
 emoji: "🎯"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["jev", "cloudflareworkers", "hono", "typescript", "ai"]
@@ -10,7 +10,7 @@ published: false
 
 - 文章を書かない AI「Jev」を Cloudflare Workers に載せて、性格診断を作りました
 - 1 回の性格診断分類が 0.0002 ドル弱。速くて、安くて、出力の型が決まっています
-- 精度は未検証ですが、筆者の性格診断結果は他のサイトと同じ結果になった。
+- 精度は未検証ですが、筆者の性格診断結果は他のサイトと同じ結果になりました。
 
 作ったものはこちらです。
 
