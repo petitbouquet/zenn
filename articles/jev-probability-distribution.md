@@ -1,5 +1,5 @@
 ---
-title: "文章を書かないAI「Jev」で性格診断を作る —— 16択の分類にちょうどよかった"
+title: "Cloudflare Workers で「Jev」を動かす —— 文章を書かないAIで16タイプ分類"
 emoji: "🎯"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["jev", "cloudflareworkers", "hono", "typescript", "ai"]
