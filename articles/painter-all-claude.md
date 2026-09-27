@@ -3,7 +3,7 @@ title: "計画を承認したら 2 時間で v1.0.0 になった、Rust + wasm �
 emoji: "🎨"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["claudecode", "webassembly", "rust", "webgl", "個人開発"]
-published: false
+published: true
 ---
 
 **この記事の3行要約**
@@ -109,6 +109,8 @@ humanizer は、AI が書いた文によく出る癖（「〜ではなく〜で�
 
 humanizer は、AI に記事を書いてもらうときに文を自然にしてくれるスキルを探していて見つけました。Google で上のほうに出てきた[こちらの記事](https://zenn.dev/m0370/articles/205c9340a418c3)で紹介されていたものです。
 ためしに使ってみたら、前の記事とくらべて頭に入ってきやすい文になったと感じています。
+
+※この記事は、意図的にClaude Code Opus5.5が書いた文章をそのまま掲載しています。生成される文章のクオリティ感の参考にしてください。
 
 ---
 
