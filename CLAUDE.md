@@ -41,6 +41,12 @@ npx zenn new:article --slug xxx  # 新しい記事
 - **Cloudflare のアカウントIDを載せない** —— ★ **コード片だけでなくスクリーンショットも見る** ★
 - **権利の話を書くときは「これは法的な助言ではない」を明記する**
 
+**ぺいんとのへや の記事**（`articles/painter-all-claude.md`、2026-09-27〜）:
+
+- **リポジトリへのリンクは置いてよい** —— `petitbouquet/painter-all-claude` は public（poina・myhp と違う）
+- ★ **タイトル・見出しに「クリスタ」「CLIP STUDIO」を入れない** ★ —— 株式会社セルシスの商品名。サイトの画面とメタデータでも出していない（`../painter-all-claude/docs/legal-check.md`）
+- **`knowledge/` へのリンクは置かない** —— 公開していない。中身を書くときは、記事に要るところだけを言い換えて書く
+
 ## 書き方
 
 ★ **`docs/writing-style.md` を先に読む**（本人からもらった指摘の記録。AI が書いた感じを抜く／届くところに置く）。★
