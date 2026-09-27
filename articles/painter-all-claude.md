@@ -19,10 +19,6 @@ https://paint.petit-bouquet.com
 ![ぺいんとのへやのキャンバスに、ペンでバナナの線を描いて、バケツで黄色に塗っているところ](/images/painter-banana.gif)
 *描いているのは人ではなく、Playwright の自動操作です。線はわざと手がきらしく揺らしています*
 
-リポジトリも公開しています。コードもドキュメントも、Claude Code に書いてもらったものです。
-
-https://github.com/petitbouquet/painter-all-claude
-
 ## 作ろうと思ったきっかけ
 
 CLIP STUDIO PAINT で、表現の規制の基準の見直しをめぐって騒ぎになっているのを見かけました。
@@ -84,25 +80,8 @@ Claude Code に渡したのは、できてほしいことの箇条書きと、�
 
 ## 手元の Windows で 4 回止まった
 
-クラウドで v1.0.0 になったあと、私の Windows で本番に出そうとしたら、4 回続けて止まりました。クラウドは Linux なので、Windows でしか起きないことは 1 つも見つからなかったんです。
-
-| 版 | 手元で起きたこと | 直し方 |
-| --- | --- | --- |
-| v1.0.1 | `cargo install wasm-pack` が `linker 'link.exe' not found` で落ちる | Windows の Rust は C++ のビルド道具でつなぐので、Visual Studio Build Tools の C++ を先に入れる |
-| v1.0.2 | OGP の画像を焼くところで `headless_shell.exe` が無い | `npm install` では Playwright の本体しか入らない。`npx playwright install chromium` が別に要る |
-| v1.0.3 | 点検が `Cannot read properties of undefined` で落ちる | `path.relative()` が Windows では `public\index.html` を返していた。ファイル名を比べる前に `/` にそろえる |
-| v1.0.4 | 本番に出すところで `spawnSync npx ENOENT` | Windows の npx は `npx.cmd` で、`execFileSync` はシェル無しでは起動できない。`node_modules/wrangler/bin/wrangler.js` を `process.execPath` で直に動かす |
-
-止まるたびに Claude Code が直して版を上げました。4 つの直しのコミットは、11:48 から 12:00 までの 12 分に並んでいます。
-
-`cargo install wasm-pack` のときは、失敗したあとに `CARGO_BUILD_BUILD_DIR` についてのお知らせが最後に出ます。これが原因に見えるのですが、関係ありません。本当の理由はその上の `link.exe` です。
-
-次に同じ形で作るなら、出す仕組み（子プロセスの起動とパスの扱い）だけ先に手元の Windows で 1 回通してから任せる、と knowledge に書きました。
-
-ほかにも、クラウドならではのことが 2 つありました。
-
-- git のタグの push が、クラウドのプロキシに 403 で断られました。コミットは届いています。タグは、打ち直すコマンドを Claude Code が `CLAUDE.md` に並べておいてくれたので、手元で打ち直しました
-- クラウドのセッションに移るとき、アプリが代わりに push しようとして失敗しました。Git Bash の ssh が Windows の ssh-agent を見ないためで、`git -c core.sshCommand=C:/Windows/System32/OpenSSH/ssh.exe push` で先に push してから移りました
+クラウドで v1.0.0 になったあと、私の Windows で本番に出そうとしたら 4 回止まりました。C++ のビルド道具（`link.exe`）が無い、Playwright の Chromium が入っていない、パスの区切りが `\` になる、`npx` が `npx.cmd` で起動できない、の 4 つです。どれもクラウド（Linux）では起きないものでした。
+止まるたびに Claude Code が直して版を上げて、4 つの直しは 12 分で済みました。
 
 ## できあがったものの評価
 
@@ -135,3 +114,7 @@ humanizer は、AI に記事を書いてもらうときに文を自然にして�
 
 絵を描く方が使ってみて、筆圧や描き味で気になったところがあれば、X で教えてもらえるとうれしいです。
 モバイル版も、そのうち作ります。
+
+成果物はこちらのリポジトリで公開しています。コードもドキュメントも、Claude Code に書いてもらったものです。
+
+https://github.com/petitbouquet/painter-all-claude/tree/main
